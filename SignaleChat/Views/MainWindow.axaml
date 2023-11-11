@@ -13,6 +13,8 @@
         Icon="/Assets/avalonia-logo.ico"
         Width="1069"
         Height="704"
+        MinHeight="704"
+        MinWidth="1069"
         Title="SignaleChat"
         ExtendClientAreaToDecorationsHint="True"
         Background="Transparent"
@@ -36,12 +38,28 @@
         </ExperimentalAcrylicBorder>
 
         <Grid ColumnDefinitions="63,*">
-            <Grid Margin="0,55,0,0">
-                <!-- 导航 -->
+            
+            <Grid RowDefinitions="110,*,200">
+                <!-- 头像 -->
+                <Button Classes="Photo"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Bottom">
+                        
+                    <Button.Flyout>
+                        <!-- 弹出界面从右上 -->
+                        <Flyout Placement="RightEdgeAlignedTop">
+                            <control:UserProfile />
+                        </Flyout>
+                    </Button.Flyout>
+                    <Image Source="avares://SignaleChat/Assets/avalonia-logo.ico" />
+                </Button>
+                
                 <StackPanel
-                    Spacing="20"
-                    Margin="5"
-                    VerticalAlignment="Top">
+                    MaxHeight="374"
+                    Spacing="22"
+                    Margin="0,17,0,5"
+                    VerticalAlignment="Top"
+                    Grid.Row="1">
 
                     <!-- 样式 -->
                     <StackPanel.Styles>
@@ -50,22 +68,13 @@
                         <Style Selector="control|NavButton">
                             <Setter Property="Command" Value="{Binding SelectedCommand}" />
                         </Style>
-                        
+
                     </StackPanel.Styles>
 
-                    <!-- 头像 -->
-                    <Button Classes="Photo">
-                        <Button.Flyout>
-                            <!-- 弹出界面从右上 -->
-                            <Flyout Placement="RightEdgeAlignedTop">
-                                <control:UserProfile />
-                            </Flyout>
-                        </Button.Flyout>
-                        <Image Source="avares://SignaleChat/Assets/avalonia-logo.ico" />
-                    </Button>
+          
 
                     <!-- 导航 -->
-                    <control:NavButton Margin="0,7,0,0"
+                    <control:NavButton 
                                        Content="{StaticResource TabBarChatSelected}"
                                        UnCheckedSvg="{StaticResource TabBarChat}"
                                        IsChecked="True"
@@ -107,17 +116,26 @@
                               Data="{StaticResource TabBarWebSearch}" />
                     </Button>
 
+                </StackPanel>
+
+                <UniformGrid Grid.Column="0"
+                             Grid.Row="2"
+                             Rows="3"
+                             Margin="0,30,0,0">
+
                     <!-- 小程序 -->
-                    <Button Classes="Menu" Margin="0,40,0,0">
+                    <Button Classes="Menu" >
                         <Path Classes="Icon"
                               Data="{StaticResource TabBarMiniProgram}" />
                     </Button>
-                    
+
                     <!-- 手机浏览内容 -->
-                    <Button Classes="Menu"
-                            Margin="0,8,0,8">
-                        <Path Classes="Icon"
-                              Data="{StaticResource TabBarWebSearch}" />
+                    <Button Classes="Menu">
+                        <Svg Path="/Assets/icons_outlined_cellphone.svg"
+                             Width="41"
+                             Height="41"
+                             Stretch="Uniform"
+                             />
                     </Button>
 
                     <!-- 设置 -->
@@ -139,12 +157,17 @@
                         <Path Classes="Icon"
                               Data="{StaticResource TabBarSetting}" />
                     </Button>
-                </StackPanel>
-            </Grid>
 
-            <ContentControl Grid.Column="1"
-                            Content="{Binding Content}" 
-                            Background="#191919" />
+                </UniformGrid>
+
+
+            </Grid>
+            
+            <!-- 窗体视图 -->
+            <ContentControl
+                Grid.Column="1"
+                Content="{Binding Content}"
+                Background="#191919" />
         </Grid>
 
 

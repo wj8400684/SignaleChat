@@ -1,0 +1,5 @@
+<linker>
+    <!-- Can be removed if CompiledBinding and no reflection are used -->
+    <assembly fullname="SignaleChat" preserve="All" />
+    <assembly fullname="Avalonia.Svg.Skia" preserve="All" />
+</linker>
