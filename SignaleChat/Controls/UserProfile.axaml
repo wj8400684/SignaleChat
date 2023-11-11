@@ -24,7 +24,7 @@
                         VerticalAlignment="Center">
                 <StackPanel Orientation="Horizontal"
                             Spacing="10">
-                    <TextBlock Text="supervisor"
+                    <TextBlock Text="AvaloniaUI"
                                FontSize="17" />
                     <Path Data="{StaticResource ProfileBrand}"
                           Stretch="Uniform"
@@ -32,7 +32,7 @@
                           Fill="Aqua"
                           Height="15" />
                 </StackPanel>
-                <TextBlock Text="微信号：supervisor95" Foreground="#969696" />
+                <TextBlock Text="微信号：avalonia" Foreground="#969696" />
                 <TextBlock Text="地区：North" Foreground="#969696" />
             </StackPanel>
         </Grid>

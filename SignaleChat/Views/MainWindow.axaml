@@ -58,7 +58,7 @@
                         <Button.Flyout>
                             <!-- 弹出界面从右上 -->
                             <Flyout Placement="RightEdgeAlignedTop">
-                                <control:ChatProfile />
+                                <control:UserProfile />
                             </Flyout>
                         </Button.Flyout>
                         <Image Source="avares://SignaleChat/Assets/avalonia-logo.ico" />

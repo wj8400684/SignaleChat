@@ -9,7 +9,6 @@
         <StyleInclude Source="avares://SignaleChat/Icon.axaml" />
         <StyleInclude Source="avares://SignaleChat/Styles/Button.axaml" />
         <StyleInclude Source="avares://SignaleChat/Styles/Path.axaml" />
-        <StyleInclude Source="avares://SignaleChat/Controls/ChatProfile.axaml" />
     </Application.Styles>
 
     <Application.Resources>
