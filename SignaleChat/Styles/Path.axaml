@@ -10,8 +10,8 @@
     
     <Style Selector="Path.Icon">
         <Setter Property="Stretch" Value="Uniform"/>
-        <Setter Property="Width" Value="23"/>
-        <Setter Property="Height" Value="23"/>
-        <Setter Property="Fill" Value="DarkGray"/>
+        <Setter Property="Width" Value="{DynamicResource SvgSize}"/>
+        <Setter Property="Height" Value="{DynamicResource SvgSize}"/>
+        <Setter Property="Fill" Value="{DynamicResource SvgFill}"/>
     </Style>
 </Styles>

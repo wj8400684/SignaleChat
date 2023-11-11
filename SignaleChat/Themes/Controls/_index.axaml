@@ -1,0 +1,11 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!-- Add Resources Here -->
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceInclude Source="avares://SignaleChat/Themes/Controls/RadioButton.axaml" />
+        <ResourceInclude Source="avares://SignaleChat/Themes/Controls/NavButton.axaml" />
+        <ResourceInclude Source="avares://SignaleChat/Themes/Controls/FriendButton.axaml" />
+        <ResourceInclude Source="avares://SignaleChat/Themes/Controls/PhoneFileButton.axaml" />
+        <ResourceInclude Source="avares://SignaleChat/Themes/Controls/Popu.axaml" />
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

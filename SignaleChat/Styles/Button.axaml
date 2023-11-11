@@ -11,6 +11,7 @@
     <!-- 带图标的透明按钮样式 -->
     <Style Selector="Button.Menu">
         <Setter Property="Padding" Value="0" />
+        <!-- <Setter Property="Margin" Value="0,0,3,0"/> -->
         <Setter Property="HorizontalAlignment" Value="Center" />
         <Setter Property="Background" Value="Transparent" />
         <Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">

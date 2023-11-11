@@ -56,7 +56,7 @@
 
                 <StackPanel
                     MaxHeight="374"
-                    Spacing="20"
+                    Spacing="23"
                     Margin="0,17,0,5"
                     VerticalAlignment="Top"
                     Grid.Row="1">
@@ -71,23 +71,25 @@
 
                     </StackPanel.Styles>
 
-
-                    <!-- 导航 -->
+                    <!-- 聊天窗口 -->
                     <control:NavButton
-                        
                         Content="{StaticResource TabBarChatSelected}"
                         UnCheckedSvg="{StaticResource TabBarChat}"
                         IsChecked="True"
                         CommandParameter="TabBarChat" />
+                    
+                    <!-- 联系人 -->
                     <control:NavButton Content="{StaticResource TabBarContactsSelected}"
                                        UnCheckedSvg="{StaticResource TabBarContacts}"
                                        CommandParameter="TabBarContacts" />
+                    
+                    <!-- 收藏夹 -->
                     <control:NavButton Content="{StaticResource TabBarFavoritesSelected}"
                                        UnCheckedSvg="{StaticResource TabBarFavorites}"
                                        CommandParameter="TabBarFavorites" />
 
                     <!-- 聊天文件 -->
-                    <Button Classes="Menu" >
+                    <Button Classes="Menu"  Padding="0">
                         <Path Classes="Icon"
                               Data="{StaticResource TabBarFolder}" />
                     </Button>
@@ -126,7 +128,7 @@
                     <!-- 小程序 -->
                     <Button Classes="Menu">
                         <Button.Flyout>
-                            <Flyout Placement="RightEdgeAlignedTop"
+                            <Flyout Placement="RightEdgeAlignedBottom"
                                     >
                                 <Image Source="avares://SignaleChat/Assets/WeChatb89ecec91cb9ab493b79177f47bc63bc.jpg"
                                        Stretch="Uniform"
@@ -147,8 +149,8 @@
                             </Flyout>
                         </Button.Flyout>
                         <Svg Path="/Assets/icons_outlined_cellphone.svg"
-                             Width="38"
-                             Height="38"
+                             Width="37"
+                             Height="37"
                              Stretch="Uniform" />
 
                     </Button>
