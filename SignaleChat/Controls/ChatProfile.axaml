@@ -1,0 +1,71 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="using:SignaleChat.Controls">
+    <Design.PreviewWith>
+        <controls:ChatProfile />
+    </Design.PreviewWith>
+
+    <Style Selector="controls|ChatProfile">
+        <!-- Set Defaults -->
+        <Setter Property="Width" Value="330"/>
+        <Setter Property="Height" Value="288"/>
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Grid RowDefinitions="0.4*,Auto,0.2*,Auto,0.4*"
+                      Margin="10,0,0,0">
+
+                    <!-- 头像 -->
+                    <Grid Grid.ColumnDefinitions="0.3*,0.6*">
+                        <Image Source="avares://SignaleChat/Assets/avalonia-logo.ico"
+                               Width="64"
+                               Height="64" />
+                        <StackPanel Grid.Column="1"
+                                    Spacing="5"
+                                    VerticalAlignment="Center">
+                            <StackPanel Orientation="Horizontal"
+                                        Spacing="10">
+                                <TextBlock Text="supervisor"
+                                           FontSize="17" />
+                                <Path Data="{StaticResource ProfileBrand}"
+                                      Stretch="Uniform"
+                                      Width="15"
+                                      Fill="Aqua"
+                                      Height="15" />
+                            </StackPanel>
+                            <TextBlock Text="微信号：supervisor95" Foreground="#969696" />
+                            <TextBlock Text="地区：North" Foreground="#969696" />
+                        </StackPanel>
+                    </Grid>
+
+                    <Separator Grid.Row="1" Background="#373737" />
+
+                    <!-- 朋友圈 -->
+                    <Button Grid.Row="2"
+                            Width="290"
+                            Margin="20,0,0,0"
+                            Theme="{StaticResource FriendButton}" />
+
+                    <Separator Grid.Row="3" Background="#373737" />
+
+                    <Button Grid.Row="4"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Classes="Menu">
+                        <StackPanel
+                            Spacing="5">
+                            <Path Data="{StaticResource TabBarChat}"
+                                  Stretch="Uniform"
+                                  Width="20"
+                                  Height="20"
+                                  Fill="#848fa8" />
+                            <TextBlock
+                                Text="发消息"
+                                Foreground="#848fa8"
+                                FontSize="13" />
+                        </StackPanel>
+                    </Button>
+                </Grid>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+</Styles>

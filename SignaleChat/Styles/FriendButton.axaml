@@ -1,0 +1,73 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!-- Add Resources Here -->
+
+    <ControlTheme x:Key="FriendButton" TargetType="Button">
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Grid Background="Transparent">
+                    <TextBlock
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        Text="朋友圈"
+                        Foreground="#969696"
+                        FontSize="17" />
+                    <Path Name="Icon"
+                          Data="{StaticResource ProfileRight}"
+                          HorizontalAlignment="Right"
+                          Opacity="0"
+                          Stretch="Uniform"
+                          Width="10"
+                          Height="10"
+                          Fill="#5d5d5d" />
+                </Grid>
+            </ControlTemplate>
+        </Setter>
+        <Style Selector="^:pointerover /template/ Path#Icon">
+            <Setter Property="Transitions">
+                <Transitions>
+                    <DoubleTransition Property="Opacity" Duration="0:0:0:0.2" />
+                </Transitions>
+            </Setter>
+            <Setter Property="Opacity" Value="1" />
+        </Style>
+
+        <!-- -->
+        <!-- <Style Selector="^.accent"> -->
+        <!--     <Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter"> -->
+        <!--         <Setter Property="Background" Value="{DynamicResource AccentButtonBackground}" /> -->
+        <!--         <Setter Property="BorderBrush" Value="{DynamicResource AccentButtonBorderBrush}" /> -->
+        <!--         <Setter Property="Foreground" Value="{DynamicResource AccentButtonForeground}" /> -->
+        <!--     </Style> -->
+        <!-- -->
+        <!--     <Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter"> -->
+        <!--         <Setter Property="Background" -->
+        <!--                 Value="{DynamicResource AccentButtonBackgroundPointerOver}" /> -->
+        <!--         <Setter Property="BorderBrush" -->
+        <!--                 Value="{DynamicResource AccentButtonBorderBrushPointerOver}" /> -->
+        <!--         <Setter Property="Foreground" -->
+        <!--                 Value="{DynamicResource AccentButtonForegroundPointerOver}" /> -->
+        <!--     </Style> -->
+        <!-- -->
+        <!--     <Style Selector="^:pressed  /template/ ContentPresenter#PART_ContentPresenter"> -->
+        <!--         <Setter Property="Background" -->
+        <!--                 Value="{DynamicResource AccentButtonBackgroundPressed}" /> -->
+        <!--         <Setter Property="BorderBrush" -->
+        <!--                 Value="{DynamicResource AccentButtonBorderBrushPressed}" /> -->
+        <!--         <Setter Property="Foreground" -->
+        <!--                 Value="{DynamicResource AccentButtonForegroundPressed}" /> -->
+        <!--     </Style> -->
+        <!-- -->
+        <!--     <Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter"> -->
+        <!--         <Setter Property="Background" -->
+        <!--                 Value="{DynamicResource AccentButtonBackgroundDisabled}" /> -->
+        <!--         <Setter Property="BorderBrush" -->
+        <!--                 Value="{DynamicResource AccentButtonBorderBrushDisabled}" /> -->
+        <!--         <Setter Property="Foreground" -->
+        <!--                 Value="{DynamicResource AccentButtonForegroundDisabled}" /> -->
+        <!--     </Style> -->
+        <!-- </Style> -->
+    </ControlTheme>
+
+
+</ResourceDictionary>

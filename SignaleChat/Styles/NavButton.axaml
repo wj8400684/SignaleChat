@@ -1,0 +1,67 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:control="clr-namespace:SignaleChat.Controls"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!-- Add Resources Here -->
+      <ControlTheme x:Key="{x:Type control:NavButton}" TargetType="{x:Type control:NavButton}">
+        <Setter Property="Foreground" Value="DarkGray" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Grid Background="Transparent">
+                        <Path x:Name="UnChecked"
+                              Opacity="1"
+                              Width="25"
+                              Height="25"
+                              HorizontalAlignment="Stretch"
+                              Fill="{TemplateBinding Foreground}"
+                              Stretch="Uniform"
+                              Data="{TemplateBinding UnCheckedSvg}" />
+                        <Path x:Name="Checked"
+                              Opacity="0"
+                              Width="25"
+                              Height="25"
+                              HorizontalAlignment="Stretch"
+                              Fill="{TemplateBinding Foreground}"
+                              Stretch="Uniform"
+                              Data="{TemplateBinding Content}" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <!-- 当选中的之后设置前景色 -->
+        <Style Selector="^:checked">
+            <Setter Property="Foreground" Value="LightGreen" />
+        </Style>
+
+        <!-- 去掉选中的动画 -->
+        <Style Selector="^ /template/ Path#UnChecked">
+            <Setter Property="Transitions">
+                <Transitions>
+                    <DoubleTransition Property="Opacity" Duration="0:0:0:0.1" />
+                </Transitions>
+            </Setter>
+        </Style>
+
+        <!-- 选中时候的动画 -->
+        <Style Selector="^ /template/ Path#Checked">
+            <Setter Property="Transitions">
+                <Transitions>
+                    <DoubleTransition Property="Opacity" Duration="0:0:0:0.1" />
+                </Transitions>
+            </Setter>
+        </Style>
+
+        <!-- 未选中时候设置透明度为不可见 -->
+        <Style Selector="^:checked/template/ Path#UnChecked">
+            <Setter Property="Opacity" Value="0" />
+        </Style>
+
+        <!-- 选中时候设置透明度为可见 -->
+        <Style Selector="^:checked/template/ Path#Checked">
+            <Setter Property="Opacity" Value="1" />
+        </Style>
+
+    </ControlTheme>
+    
+</ResourceDictionary>

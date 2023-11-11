@@ -3,19 +3,151 @@
         xmlns:vm="using:SignaleChat.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        xmlns:page="using:SignaleChat.Views"
+        xmlns:control="using:SignaleChat.Controls"
+        mc:Ignorable="d"
+        d:DesignWidth="800"
+        d:DesignHeight="800"
         x:Class="SignaleChat.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/avalonia-logo.ico"
-        Title="SignaleChat">
+        Width="1069"
+        Height="704"
+        Title="SignaleChat"
+        ExtendClientAreaToDecorationsHint="True"
+        Background="Transparent"
+        TransparencyLevelHint="AcrylicBlur">
 
     <Design.DataContext>
         <!-- This only sets the DataContext for the previewer in an IDE,
              to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
-        <vm:MainWindowViewModel/>
+        <vm:MainWindowViewModel />
     </Design.DataContext>
 
-    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    <Grid>
+        <ExperimentalAcrylicBorder IsHitTestVisible="False">
+            <ExperimentalAcrylicBorder.Material>
+                <ExperimentalAcrylicMaterial
+                    BackgroundSource="Digger"
+                    TintColor="Black"
+                    TintOpacity="1"
+                    MaterialOpacity="0.9" />
+            </ExperimentalAcrylicBorder.Material>
+        </ExperimentalAcrylicBorder>
+
+        <Grid ColumnDefinitions="63,*">
+            <Grid Margin="0,55,0,0">
+                <!-- 导航 -->
+                <StackPanel
+                    Spacing="20"
+                    Margin="5"
+                    VerticalAlignment="Top">
+
+                    <!-- 样式 -->
+                    <StackPanel.Styles>
+
+                        <!-- 设置NavButton统一样式 -->
+                        <Style Selector="control|NavButton">
+                            <Setter Property="Command" Value="{Binding SelectedCommand}" />
+                        </Style>
+                        
+                    </StackPanel.Styles>
+
+                    <!-- 头像 -->
+                    <Button Classes="Photo">
+                        <Button.Flyout>
+                            <!-- 弹出界面从右上 -->
+                            <Flyout Placement="RightEdgeAlignedTop">
+                                <control:ChatProfile />
+                            </Flyout>
+                        </Button.Flyout>
+                        <Image Source="avares://SignaleChat/Assets/avalonia-logo.ico" />
+                    </Button>
+
+                    <!-- 导航 -->
+                    <control:NavButton Margin="0,7,0,0"
+                                       Content="{StaticResource TabBarChatSelected}"
+                                       UnCheckedSvg="{StaticResource TabBarChat}"
+                                       IsChecked="True"
+                                       CommandParameter="TabBarChat" />
+                    <control:NavButton Content="{StaticResource TabBarContactsSelected}"
+                                       UnCheckedSvg="{StaticResource TabBarContacts}"
+                                       CommandParameter="TabBarContacts" />
+                    <control:NavButton Content="{StaticResource TabBarFavoritesSelected}"
+                                       UnCheckedSvg="{StaticResource TabBarFavorites}"
+                                       CommandParameter="TabBarFavorites" />
+
+                    <!-- 聊天文件 -->
+                    <Button Classes="Menu">
+                        <Path Classes="Icon"
+                              Data="{StaticResource TabBarFolder}" />
+                    </Button>
+
+                    <!-- 朋友圈 -->
+                    <Button Classes="Menu">
+                        <Path Classes="Icon"
+                              Data="{StaticResource TabBarSNS}" />
+                    </Button>
+
+                    <!-- 视频号 -->
+                    <Button Classes="Menu">
+                        <Path Classes="Icon"
+                              Data="{StaticResource TabBarFeed}" />
+                    </Button>
+
+                    <!-- 看一看 -->
+                    <Button Classes="Menu">
+                        <Path Classes="Icon"
+                              Data="{StaticResource TabBarNews}" />
+                    </Button>
+
+                    <!-- 搜一搜 -->
+                    <Button Classes="Menu">
+                        <Path Classes="Icon"
+                              Data="{StaticResource TabBarWebSearch}" />
+                    </Button>
+
+                    <!-- 小程序 -->
+                    <Button Classes="Menu" Margin="0,40,0,0">
+                        <Path Classes="Icon"
+                              Data="{StaticResource TabBarMiniProgram}" />
+                    </Button>
+                    
+                    <!-- 手机浏览内容 -->
+                    <Button Classes="Menu"
+                            Margin="0,8,0,8">
+                        <Path Classes="Icon"
+                              Data="{StaticResource TabBarWebSearch}" />
+                    </Button>
+
+                    <!-- 设置 -->
+                    <Button Classes="Menu">
+                        <Button.Styles>
+                            <Style Selector="MenuItem">
+                                <Setter Property="Height" Value="43" />
+                            </Style>
+                        </Button.Styles>
+                        <Button.Flyout>
+                            <MenuFlyout Placement="RightEdgeAlignedBottom"
+                                        ShowMode="TransientWithDismissOnPointerMoveAway">
+                                <MenuItem Header="迁移与备份" />
+                                <MenuItem Header="锁定" />
+                                <MenuItem Header="意见反馈" />
+                                <MenuItem Header="设置" />
+                            </MenuFlyout>
+                        </Button.Flyout>
+                        <Path Classes="Icon"
+                              Data="{StaticResource TabBarSetting}" />
+                    </Button>
+                </StackPanel>
+            </Grid>
+
+            <ContentControl Grid.Column="1"
+                            Content="{Binding Content}" 
+                            Background="#191919" />
+        </Grid>
+
+
+    </Grid>
 
 </Window>
-
