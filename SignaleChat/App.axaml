@@ -17,6 +17,8 @@
                 <ResourceInclude Source="avares://SignaleChat/Styles/RadioButton.axaml" />
                 <ResourceInclude Source="avares://SignaleChat/Styles/NavButton.axaml" />
                 <ResourceInclude Source="avares://SignaleChat/Styles/FriendButton.axaml" />
+                <ResourceInclude Source="avares://SignaleChat/Styles/PhoneFileButton.axaml" />
+                <ResourceInclude Source="avares://SignaleChat/Styles/Popu.axaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

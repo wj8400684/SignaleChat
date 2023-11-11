@@ -1,0 +1,47 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             d:DesignWidth="230"
+             d:DesignHeight="130"
+             Width="230"
+             Height="130"
+             Padding="0"
+             x:Class="SignaleChat.Controls.OutLinedCellPhone">
+    <Grid>
+        <StackPanel HorizontalAlignment="Center"
+                    VerticalAlignment="Top"
+                    Spacing="3"
+                    Margin="0,10,0,10">
+            <TextBlock
+                Text="手机正在浏览和服窗的内容将"
+                HorizontalAlignment="Center"
+                FontSize="14" />
+            <TextBlock
+                Text="这里显示"
+                HorizontalAlignment="Center"
+                FontSize="14" />
+        </StackPanel>
+        <Separator Background="#373737" />
+        <Button VerticalAlignment="Bottom"
+                Background="Transparent"
+                Height="60">
+            <StackPanel Orientation="Horizontal"
+                        Spacing="10">
+                <Path Width="20"
+                      Height="20"
+                      Stretch="Uniform"
+                      Fill="DarkGray"
+                      Data="{StaticResource TabBarFolder}" />
+                <TextBlock Text="文件传输助手"
+                           VerticalAlignment="Center" />
+                <Svg Margin="65,0,0,0"
+                     Path="/Assets/icons_outlined_more2.svg"
+                     Width="20"
+                     Height="20"
+                     Stretch="Uniform" />
+            </StackPanel>
+        </Button>
+    </Grid>
+</UserControl>

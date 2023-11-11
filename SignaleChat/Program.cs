@@ -1,4 +1,6 @@
 ﻿using Avalonia;
+using Avalonia.Fonts;
+using Avalonia.Fonts.Inter;
 using System;
 
 namespace SignaleChat;
@@ -16,6 +18,7 @@ class Program
     public static AppBuilder BuildAvaloniaApp()
     {
         return AppBuilder.Configure<App>()
+                         .WithInterFont()
                          .UsePlatformDetect()
                          .LogToTrace();
     }

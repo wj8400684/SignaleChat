@@ -1,0 +1,24 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!-- Add Resources Here -->
+    
+    <ControlTheme x:Key="PhoneFile" TargetType="{x:Type Button}">
+        <Setter Property="Foreground" Value="DarkGray" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Grid Background="Transparent">
+                        <Path 
+                              Width="25"
+                              Height="25"
+                              HorizontalAlignment="Stretch"
+                              Fill="{TemplateBinding Foreground}"
+                              Stretch="Uniform"
+                              Data="{TemplateBinding Content}" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+    </ControlTheme>
+</ResourceDictionary>

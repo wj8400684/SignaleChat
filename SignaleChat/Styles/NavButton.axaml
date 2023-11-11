@@ -2,7 +2,7 @@
                     xmlns:control="clr-namespace:SignaleChat.Controls"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <!-- Add Resources Here -->
-      <ControlTheme x:Key="{x:Type control:NavButton}" TargetType="{x:Type control:NavButton}">
+    <ControlTheme x:Key="{x:Type control:NavButton}" TargetType="{x:Type control:NavButton}">
         <Setter Property="Foreground" Value="DarkGray" />
         <Setter Property="Template">
             <Setter.Value>
@@ -10,16 +10,16 @@
                     <Grid Background="Transparent">
                         <Path x:Name="UnChecked"
                               Opacity="1"
-                              Width="25"
-                              Height="25"
+                              Width="23"
+                              Height="23"
                               HorizontalAlignment="Stretch"
                               Fill="{TemplateBinding Foreground}"
                               Stretch="Uniform"
                               Data="{TemplateBinding UnCheckedSvg}" />
                         <Path x:Name="Checked"
                               Opacity="0"
-                              Width="25"
-                              Height="25"
+                              Width="23"
+                              Height="23"
                               HorizontalAlignment="Stretch"
                               Fill="{TemplateBinding Foreground}"
                               Stretch="Uniform"
@@ -63,5 +63,5 @@
         </Style>
 
     </ControlTheme>
-    
+
 </ResourceDictionary>
