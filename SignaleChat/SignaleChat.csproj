@@ -23,4 +23,16 @@
     <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.5" />
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
   </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Assets\Fonts\Alibab\AlibabaPuHuiTi-3-105-Heavy.ttf" />
+    <UpToDateCheckInput Remove="Assets\Fonts\Alibab\AlibabaPuHuiTi-3-115-Black.ttf" />
+    <UpToDateCheckInput Remove="Assets\Fonts\Alibab\AlibabaPuHuiTi-3-35-Thin.ttf" />
+    <UpToDateCheckInput Remove="Assets\Fonts\Alibab\AlibabaPuHuiTi-3-45-Light.ttf" />
+    <UpToDateCheckInput Remove="Assets\Fonts\Alibab\AlibabaPuHuiTi-3-55-Regular.ttf" />
+    <UpToDateCheckInput Remove="Assets\Fonts\Alibab\AlibabaPuHuiTi-3-65-Medium.ttf" />
+    <UpToDateCheckInput Remove="Assets\Fonts\Alibab\AlibabaPuHuiTi-3-75-SemiBold.ttf" />
+    <UpToDateCheckInput Remove="Assets\Fonts\Alibab\AlibabaPuHuiTi-3-85-Bold.ttf" />
+    <UpToDateCheckInput Remove="Assets\Fonts\Alibab\AlibabaPuHuiTi-3-95-ExtraBold.ttf" />
+  </ItemGroup>
 </Project>

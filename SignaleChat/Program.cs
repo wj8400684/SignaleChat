@@ -1,5 +1,6 @@
 ﻿using Avalonia;
 using System;
+using Avalonia.Media;
 
 namespace SignaleChat;
 
@@ -16,7 +17,16 @@ class Program
     public static AppBuilder BuildAvaloniaApp()
     {
         return AppBuilder.Configure<App>()
-                         .UseFontAlibaba()
+                        .With(new FontManagerOptions
+                        {
+                            FontFallbacks = new[]
+                            {
+                                new FontFallback
+                                {
+                                    FontFamily = new FontFamily("Microsoft YaHei")
+                                }
+                            }
+                        })
                          .UsePlatformDetect()
                          .LogToTrace();
     }
