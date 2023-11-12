@@ -6,10 +6,105 @@
         </Border>
     </Design.PreviewWith>
 
+    <Style Selector="Window">
+        <Setter Property="ExtendClientAreaToDecorationsHint">
+            <OnPlatformExtension>
+                <OnPlatformExtension.Default>
+                    <x:Boolean>False</x:Boolean>
+                </OnPlatformExtension.Default>
+                <OnPlatformExtension.macOS>
+                    <x:Boolean>True</x:Boolean>
+                </OnPlatformExtension.macOS>
+                <OnPlatformExtension.Windows>
+                    <x:Boolean>False</x:Boolean>
+                </OnPlatformExtension.Windows>
+            </OnPlatformExtension>
+        </Setter>
+    </Style>
+    
     <!-- Add Styles Here -->
     <Style Selector="Window.Mac">
-        <Setter Property="Background" Value="Transparent"/>
-        <Setter Property="ExtendClientAreaToDecorationsHint" Value="True"/>
-        <Setter Property="TransparencyLevelHint" Value="AcrylicBlur"/>
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="ExtendClientAreaToDecorationsHint" Value="True" />
+        <Setter Property="TransparencyLevelHint" Value="AcrylicBlur" />
     </Style>
+
+    <Style Selector="Window.Windows">
+        <Setter Property="Padding" Value="0,40,0,0" />
+        <Setter Property="TransparencyLevelHint" Value="None" />
+        <Setter Property="ExtendClientAreaTitleBarHeightHint" Value="63" />
+        <Setter Property="TransparencyBackgroundFallback" Value="Transparent" />
+        <Setter Property="ExtendClientAreaToDecorationsHint" Value="True" />
+        <Setter Property="ExtendClientAreaChromeHints" Value="NoChrome" />
+        <Setter Property="Template">
+            <ControlTemplate TargetType="Window">
+                <Border ClipToBounds="{TemplateBinding ClipToBounds}"
+                        CornerRadius="{TemplateBinding CornerRadius}">
+                    <Panel>
+                        <Border x:Name="PART_TransparencyFallback" IsHitTestVisible="False" />
+                        <Border Background="{TemplateBinding Background}" IsHitTestVisible="False" />
+                        <Panel Margin="{TemplateBinding WindowDecorationMargin}"
+                               Background="Transparent" />
+                        <VisualLayerManager>
+                            <VisualLayerManager.ChromeOverlayLayer>
+                                <StackPanel
+                                    Margin="0,10,10,0"
+                                    HorizontalAlignment="Right"
+                                    VerticalAlignment="Top"
+                                    Orientation="Horizontal"
+                                    Spacing="10">
+                                    <StackPanel.Styles>
+                                        <Style Selector="Button">
+                                            <Setter Property="Height" Value="35" />
+                                            <Setter Property="Width" Value="35" />
+                                            <Setter Property="Theme"
+                                                    Value="{DynamicResource BorderlessButton}" />
+                                            <Setter Property="CommandParameter"
+                                                    Value="{ReflectionBinding Path=$parent[Window]}" />
+                                        </Style>
+                                        <!-- <Style Selector="avalonia|MaterialIcon"> -->
+                                        <!--     <Setter Property="Width" Value="25" /> -->
+                                        <!--     <Setter Property="Height" Value="25" /> -->
+                                        <!-- </Style> -->
+                                    </StackPanel.Styles>
+                                    <!-- <Button Classes="Tertiary" -->
+                                    <!--         Command="{ReflectionBinding MinimizeCommand}"> -->
+                                    <!--     <avalonia:MaterialIcon Kind="WindowMinimize" /> -->
+                                    <!-- </Button> -->
+                                    <!-- <Button Classes="Tertiary" -->
+                                    <!--         Command="{ReflectionBinding MaximizedCommand}"> -->
+                                    <!--     <avalonia:MaterialIcon Kind="WindowMaximize" /> -->
+                                    <!-- </Button> -->
+                                    <!-- <Button Classes="Tertiary" -->
+                                    <!--         Command="{ReflectionBinding CloseCommand}"> -->
+                                    <!--     <avalonia:MaterialIcon Kind="WindowClose" /> -->
+                                    <!--     <Button.Styles> -->
+                                    <!--         <Style Selector="Button:pointerover"> -->
+                                    <!--             <Setter Property="Transitions"> -->
+                                    <!--                 <Transitions> -->
+                                    <!--                     <BrushTransition Duration="0:0:0.2" -->
+                                    <!--                         Property="Foreground" /> -->
+                                    <!--                 </Transitions> -->
+                                    <!--             </Setter> -->
+                                    <!--             <Setter Property="Foreground" -->
+                                    <!--                     Value="{DynamicResource SemiRed5}" /> -->
+                                    <!--         </Style> -->
+                                    <!--     </Button.Styles> -->
+                                    <!-- </Button> -->
+                                </StackPanel>
+                            </VisualLayerManager.ChromeOverlayLayer>
+                            <ContentPresenter
+                                x:Name="PART_ContentPresenter"
+                                Margin="{TemplateBinding Padding}"
+                                HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                Content="{TemplateBinding Content}"
+                                ContentTemplate="{TemplateBinding ContentTemplate}" />
+                        </VisualLayerManager>
+                    </Panel>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+
 </Styles>
