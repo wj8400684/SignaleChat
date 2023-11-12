@@ -1,38 +1,42 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
-    <ApplicationManifest>app.manifest</ApplicationManifest>
-    <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
-  </PropertyGroup>
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
+        <ApplicationManifest>app.manifest</ApplicationManifest>
+        <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
 
-  <ItemGroup>
-    <Folder Include="Models\" />
-    <AvaloniaResource Include="Assets\**" />
-    <TrimmerRootDescriptor Include="Roots.xml" />
-  </ItemGroup>
+        <PublishAot>true</PublishAot>
+        <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
 
-  <ItemGroup>
-    <PackageReference Include="Avalonia" Version="11.0.5" />
-    <PackageReference Include="Avalonia.Desktop" Version="11.0.5" />
-    <PackageReference Include="Avalonia.Svg.Skia" Version="11.0.0.3" />
-    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.0.5" />
-    <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
-    <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.5" />
-    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
-  </ItemGroup>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Assets\Fonts\Alibab\AlibabaPuHuiTi-3-105-Heavy.ttf" />
-    <UpToDateCheckInput Remove="Assets\Fonts\Alibab\AlibabaPuHuiTi-3-115-Black.ttf" />
-    <UpToDateCheckInput Remove="Assets\Fonts\Alibab\AlibabaPuHuiTi-3-35-Thin.ttf" />
-    <UpToDateCheckInput Remove="Assets\Fonts\Alibab\AlibabaPuHuiTi-3-45-Light.ttf" />
-    <UpToDateCheckInput Remove="Assets\Fonts\Alibab\AlibabaPuHuiTi-3-55-Regular.ttf" />
-    <UpToDateCheckInput Remove="Assets\Fonts\Alibab\AlibabaPuHuiTi-3-65-Medium.ttf" />
-    <UpToDateCheckInput Remove="Assets\Fonts\Alibab\AlibabaPuHuiTi-3-75-SemiBold.ttf" />
-    <UpToDateCheckInput Remove="Assets\Fonts\Alibab\AlibabaPuHuiTi-3-85-Bold.ttf" />
-    <UpToDateCheckInput Remove="Assets\Fonts\Alibab\AlibabaPuHuiTi-3-95-ExtraBold.ttf" />
-  </ItemGroup>
+    <ItemGroup>
+        <Folder Include="Models\"/>
+        <AvaloniaResource Include="Assets\**"/>
+        <TrimmerRootDescriptor Include="Roots.xml"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Avalonia" Version="11.0.5"/>
+        <PackageReference Include="Avalonia.Desktop" Version="11.0.5"/>
+        <PackageReference Include="Avalonia.Svg.Skia" Version="11.0.0.3"/>
+        <PackageReference Include="Avalonia.Themes.Fluent" Version="11.0.5"/>
+        <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
+        <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.5"/>
+        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <UpToDateCheckInput Remove="Assets\Fonts\Alibab\AlibabaPuHuiTi-3-105-Heavy.ttf"/>
+        <UpToDateCheckInput Remove="Assets\Fonts\Alibab\AlibabaPuHuiTi-3-115-Black.ttf"/>
+        <UpToDateCheckInput Remove="Assets\Fonts\Alibab\AlibabaPuHuiTi-3-35-Thin.ttf"/>
+        <UpToDateCheckInput Remove="Assets\Fonts\Alibab\AlibabaPuHuiTi-3-45-Light.ttf"/>
+        <UpToDateCheckInput Remove="Assets\Fonts\Alibab\AlibabaPuHuiTi-3-55-Regular.ttf"/>
+        <UpToDateCheckInput Remove="Assets\Fonts\Alibab\AlibabaPuHuiTi-3-65-Medium.ttf"/>
+        <UpToDateCheckInput Remove="Assets\Fonts\Alibab\AlibabaPuHuiTi-3-75-SemiBold.ttf"/>
+        <UpToDateCheckInput Remove="Assets\Fonts\Alibab\AlibabaPuHuiTi-3-85-Bold.ttf"/>
+        <UpToDateCheckInput Remove="Assets\Fonts\Alibab\AlibabaPuHuiTi-3-95-ExtraBold.ttf"/>
+    </ItemGroup>
 </Project>

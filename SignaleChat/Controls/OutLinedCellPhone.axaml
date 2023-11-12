@@ -8,6 +8,7 @@
              Width="230"
              Height="130"
              Padding="0"
+             x:CompileBindings="True"
              x:Class="SignaleChat.Controls.OutLinedCellPhone">
     <Grid>
         <StackPanel HorizontalAlignment="Center"

@@ -1,6 +1,7 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:control="clr-namespace:SignaleChat.Controls"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    x:CompileBindings="True">
     <!-- Add Resources Here -->
     <ControlTheme x:Key="{x:Type control:NavButton}" TargetType="{x:Type control:NavButton}">
         <Setter Property="Foreground" Value="DarkGray" />

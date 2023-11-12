@@ -9,15 +9,8 @@
         <StyleInclude Source="avares://SignaleChat/Styles/Button.axaml" />
         <StyleInclude Source="avares://SignaleChat/Styles/Path.axaml" />
         <StyleInclude Source="avares://SignaleChat/Styles/Window.axaml" />
+        <StyleInclude Source="avares://SignaleChat/Themes/_index.axaml"/>
     </Application.Styles>
 
-    <Application.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceInclude Source="avares://SignaleChat/Shared/Path.axaml" />
-                <ResourceInclude Source="avares://SignaleChat/Shared/Svg.axaml" />
-                <ResourceInclude Source="avares://SignaleChat/Themes/Controls/_index.axaml" />
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </Application.Resources>
+ 
 </Application>
