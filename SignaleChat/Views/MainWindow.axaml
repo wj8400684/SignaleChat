@@ -15,10 +15,7 @@
         Height="704"
         MinHeight="704"
         MinWidth="1069"
-        Title="SignaleChat"
-        ExtendClientAreaToDecorationsHint="True"
-        Background="Transparent"
-        TransparencyLevelHint="AcrylicBlur">
+        Title="SignaleChat">
 
     <Design.DataContext>
         <!-- This only sets the DataContext for the previewer in an IDE,
