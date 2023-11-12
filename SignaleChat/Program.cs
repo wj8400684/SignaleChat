@@ -1,6 +1,4 @@
 ﻿using Avalonia;
-using Avalonia.Fonts;
-using Avalonia.Fonts.Inter;
 using System;
 
 namespace SignaleChat;
