@@ -8,6 +8,7 @@
         <FluentTheme />
         <StyleInclude Source="avares://SignaleChat/Styles/Button.axaml" />
         <StyleInclude Source="avares://SignaleChat/Styles/Path.axaml" />
+        <StyleInclude Source="avares://SignaleChat/Styles/Window.axaml" />
     </Application.Styles>
 
     <Application.Resources>
