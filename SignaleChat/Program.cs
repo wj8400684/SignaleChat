@@ -16,7 +16,7 @@ class Program
     public static AppBuilder BuildAvaloniaApp()
     {
         return AppBuilder.Configure<App>()
-                         .UseFontFamily()
+                         .UseFontAlibaba()
                          .UsePlatformDetect()
                          .LogToTrace();
     }

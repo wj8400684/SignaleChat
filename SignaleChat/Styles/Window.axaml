@@ -6,22 +6,6 @@
         </Border>
     </Design.PreviewWith>
 
-    <Style Selector="Window">
-        <Setter Property="ExtendClientAreaToDecorationsHint">
-            <OnPlatformExtension>
-                <OnPlatformExtension.Default>
-                    <x:Boolean>False</x:Boolean>
-                </OnPlatformExtension.Default>
-                <OnPlatformExtension.macOS>
-                    <x:Boolean>True</x:Boolean>
-                </OnPlatformExtension.macOS>
-                <OnPlatformExtension.Windows>
-                    <x:Boolean>False</x:Boolean>
-                </OnPlatformExtension.Windows>
-            </OnPlatformExtension>
-        </Setter>
-    </Style>
-    
     <!-- Add Styles Here -->
     <Style Selector="Window.Mac">
         <Setter Property="Background" Value="Transparent" />

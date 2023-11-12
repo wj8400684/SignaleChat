@@ -1,4 +1,5 @@
-﻿using Avalonia;
+﻿using System.Runtime.InteropServices;
+using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Data.Core;
 using Avalonia.Data.Core.Plugins;
@@ -26,6 +27,17 @@ public partial class App : Application
             {
                 DataContext = new MainWindowViewModel(),
             };
+            
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+            {
+                desktop.MainWindow.Classes.Clear();
+                desktop.MainWindow.Classes.Add("Windows");
+            }
+            else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+            {
+                desktop.MainWindow.Classes.Clear();
+                desktop.MainWindow.Classes.Add("Mac");
+            }
         }
 
         base.OnFrameworkInitializationCompleted();
