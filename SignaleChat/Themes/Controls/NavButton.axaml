@@ -7,7 +7,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate>
-                    <Grid Background="Transparent">
+                    <Panel Background="Transparent">
                         <Path x:Name="UnChecked"
                               Opacity="1"
                               Width="{DynamicResource SvgSize}"
@@ -22,7 +22,7 @@
                               Fill="{TemplateBinding Foreground}"
                               Stretch="Uniform"
                               Data="{TemplateBinding Content}" />
-                    </Grid>
+                    </Panel>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

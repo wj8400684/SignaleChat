@@ -33,7 +33,7 @@
                     BackgroundSource="Digger"
                     TintColor="Black"
                     TintOpacity="1"
-                    MaterialOpacity="0.9" />
+                    MaterialOpacity="0.85" />
             </ExperimentalAcrylicBorder.Material>
         </ExperimentalAcrylicBorder>
 
@@ -77,68 +77,56 @@
                         UnCheckedSvg="{StaticResource TabBarChat}"
                         IsChecked="True"
                         CommandParameter="TabBarChat" />
-                    
+
                     <!-- 联系人 -->
                     <control:NavButton Content="{StaticResource TabBarContactsSelected}"
                                        UnCheckedSvg="{StaticResource TabBarContacts}"
                                        CommandParameter="TabBarContacts" />
-                    
+
                     <!-- 收藏夹 -->
                     <control:NavButton Content="{StaticResource TabBarFavoritesSelected}"
                                        UnCheckedSvg="{StaticResource TabBarFavorites}"
                                        CommandParameter="TabBarFavorites" />
 
                     <!-- 聊天文件 -->
-                    <Button Classes="Menu"  Padding="0">
-                        <Path Classes="Icon"
-                              Data="{StaticResource TabBarFolder}" />
-                    </Button>
+                    <Button Theme="{StaticResource ButtonIcon}"
+                            Content="{DynamicResource TabBarFolder}"/>
 
                     <!-- 朋友圈 -->
-                    <Button Classes="Menu">
-                        <Path Classes="Icon"
-                              Data="{StaticResource TabBarSNS}" />
-                    </Button>
+                    <Button Theme="{StaticResource ButtonIcon}"
+                            Content="{DynamicResource TabBarSNS}"/>
 
                     <!-- 视频号 -->
-                    <Button Classes="Menu">
-                        <Path Classes="Icon"
-                              Data="{StaticResource TabBarFeed}" />
-                    </Button>
+                    <Button Theme="{StaticResource ButtonIcon}"
+                            Content="{DynamicResource TabBarFeed}"/>
 
                     <!-- 看一看 -->
-                    <Button Classes="Menu">
-                        <Path Classes="Icon"
-                              Data="{StaticResource TabBarNews}" />
-                    </Button>
+                    <Button Theme="{StaticResource ButtonIcon}"
+                            Content="{DynamicResource TabBarNews}"/>
 
                     <!-- 搜一搜 -->
-                    <Button Classes="Menu">
-                        <Path Classes="Icon"
-                              Data="{StaticResource TabBarWebSearch}" />
-                    </Button>
+                    <Button Theme="{StaticResource ButtonIcon}"
+                            Content="{DynamicResource TabBarWebSearch}"/>
 
                 </StackPanel>
 
                 <UniformGrid Grid.Column="0"
                              Grid.Row="2"
                              Rows="3"
-                             Margin="0,30,0,0">
+                             Margin="0,30,0,5">
 
                     <!-- 小程序 -->
-                    <Button Classes="Menu">
+                    <Button Theme="{StaticResource ButtonIcon}"
+                            Content="{DynamicResource TabBarMiniProgram}">
                         <Button.Flyout>
-                            <Flyout Placement="RightEdgeAlignedBottom"
-                                    >
-                                <Image Source="avares://SignaleChat/Assets/WeChatb89ecec91cb9ab493b79177f47bc63bc.jpg"
-                                       Stretch="Uniform"
-                                       Width="336"
-                                       Height="456"
-                                       />
+                            <Flyout Placement="RightEdgeAlignedBottom">
+                                <Image
+                                    Source="avares://SignaleChat/Assets/WeChatb89ecec91cb9ab493b79177f47bc63bc.jpg"
+                                    Stretch="Uniform"
+                                    Width="336"
+                                    Height="456" />
                             </Flyout>
                         </Button.Flyout>
-                        <Path Classes="Icon"
-                              Data="{StaticResource TabBarMiniProgram}" />
                     </Button>
 
                     <!-- 手机浏览内容 -->
@@ -156,7 +144,8 @@
                     </Button>
 
                     <!-- 设置 -->
-                    <Button Classes="Menu">
+                    <Button Theme="{StaticResource ButtonIcon}"
+                            Content="{DynamicResource TabBarSetting}">
                         <Button.Styles>
                             <Style Selector="MenuItem">
                                 <Setter Property="Height" Value="43" />
@@ -171,8 +160,6 @@
                                 <MenuItem Header="设置" />
                             </MenuFlyout>
                         </Button.Flyout>
-                        <Path Classes="Icon"
-                              Data="{StaticResource TabBarSetting}" />
                     </Button>
 
                 </UniformGrid>

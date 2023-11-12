@@ -1,0 +1,40 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!-- Add Resources Here -->
+
+    <ControlTheme x:Key="ButtonIcon" TargetType="Button">
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="RenderTransform" Value="none" />
+        <Setter Property="Transitions">
+            <Transitions>
+                <TransformOperationsTransition Property="RenderTransform" Duration="0:0:.075" />
+            </Transitions>
+        </Setter>
+
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Panel Background="Transparent">
+                    <Path Data="{TemplateBinding Content}"
+                          Fill="{DynamicResource SvgFill}"
+                          Width="{DynamicResource SvgSize}"
+                          Height="{DynamicResource SvgSize}"
+                          Stretch="Uniform"/>
+                </Panel>
+            </ControlTemplate>
+        </Setter>
+
+        <Style Selector="^:pressed">
+            <Setter Property="RenderTransform" Value="scale(0.98)" />
+        </Style>
+
+        <Style Selector="^:pressed  /template/ Path">
+            <Setter Property="Fill" Value="{DynamicResource ButtonBackgroundPressed}" />
+        </Style>
+
+        <Style Selector="^:disabled /template/ Path">
+            <Setter Property="Fill" Value="{DynamicResource ButtonBackgroundDisabled}" />
+        </Style>
+
+    </ControlTheme>
+</ResourceDictionary>
