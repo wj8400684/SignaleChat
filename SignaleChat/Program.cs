@@ -18,7 +18,7 @@ class Program
     public static AppBuilder BuildAvaloniaApp()
     {
         return AppBuilder.Configure<App>()
-                         .WithInterFont()
+                         .UseFontFamily()
                          .UsePlatformDetect()
                          .LogToTrace();
     }
